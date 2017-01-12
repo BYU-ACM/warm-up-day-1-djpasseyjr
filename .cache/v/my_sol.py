@@ -10,16 +10,8 @@ def Newtons_Method(func, func_prime, x_0, iters=100, tol=1e-5):
      returns: a root(int) if found
               None(none-type) else
   """
-  x = x_0
-  iter = True
-  i = 0
-
-  while iter
-      if abs(func(x)) <= tol:
-          return x
-      x = x - (func(x)/func_prime(x))
-      i += 1
-      if i == iters:
-          return none
-
-
+  for i in range(iters):
+    x_0 -= func(x_0)/func_prime(x_0)
+    if abs(func(x_0)) < tol:
+      return x_0
+  return None
